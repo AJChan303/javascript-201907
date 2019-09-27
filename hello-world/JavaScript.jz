@@ -1,0 +1,413 @@
+JavaScript
+
+var and let
+
+var - is global unless it is inside a function, then it is function scoped
+
+let - makes a variable block scoped
+
+PRimary use to manipulate the dom
+
+JS is interpretted whereas C# is compiled
+in <head>
+<script lang = "JavaScript">
+function
+</script>
+	JQuery UI an important jquery plugin
+
+keyword THIS... Means this object
+script tag can aslo go inside the body but it usually goes at the bottom 
+Dynamicaly typed. Any JS variable can hold any type
+easier to learn increases errors
+Derivitive of C
+Made to grant interactivity to websites
+no compiler. executed from source everytime.
+; - in JS has a little bit of a different meaning. not a statement terminator.
+end of line = statements is done
+; is required when you want 2 statements on one line.
+undefined kinda like null
+keyword
+	typeof - tells you type
+types
+	scalar
+		number - only type of nummber includes ints doubles floats...
+		string -
+		boolean
+	reference
+		object - just means it holds more than one peice of data or 
+			array - calls it an object. position in storage works like c#. 
+				no restriction all items need to be the same type
+				var a[] - can do a.push(what ur adding)
+				.pop() takes out the last one in the array
+			{}  similar to dictionaries in c#  has a key value  that matches to another object
+				ex. a ["OH"] = "Ohio"
+				ex.var ohio = a["OH"]
+					undefined
+					ohio
+					"Ohio"
+				ex. var key = "OH"
+					undefined
+					a[key]
+					"Ohio"
+				ex. a.KY
+					"Kentucky"
+				ex. a.KY = "The Blue Grass State" //to set value of key	
+
+				ex.companies[1].city
+					"Seattle"
+					companies[1]["city"]
+					"Seattle"	
+		var x = 1
+		undefined
+		var y = 1
+		undefined
+		x==y
+		true
+
+		 var x = 1
+		undefined
+		var y = "1"
+		undefined
+		x == y
+		true
+
+		"1" + 1
+			"11"
+			+ is concat if there is a string involved
+			When JS finds 2 things that are not of the same type. if they are not the same JS tries to make them the same by converting one to the type of the other.  A number can always be turned into a string that's why it works.
+
+		=== - JS introduce another equality check. checks the original types of the 2 items being checked. if the types are different they will never be the same.
+		x === y 
+		false 
+		==interpolation==
+		`Idxx is ${idxx}` interpolation
+
+		java foreach is a for statement uses of instead of in
+			in brings back index
+		ex.
+		for(var fred of [1, 2, 3]) { console.log(` item is ${fred}`)}
+		ex.
+		for(var fred in ['a', 'b', 'c']) { console.log("item is " + fred)}
+		 item is 0
+		 item is 1
+		 item is 2
+	==creating functions==
+	ex . 
+	function add1(nbr){
+	return nbr +1;
+	}
+	 attribute 
+	  on indicates an event
+	  onclick = to execute a function
+	  	onclick = "add1()"
+	  OnLoad="loaded()"
+	 websites don't work like programs constantly running most of the time they are waiting for the user to input something
+	 mouse events
+	 	onlick ondoubleclick
+	 	onmouseover
+	 	onmouseout
+	 Keyboard
+	 	Onkeydown
+	 	onkeyup
+	 	onkeypress
+	 Drag/Drop events
+	 	ondrag
+	 	ondrop
+	 	ondragenter
+	 	ondragleave
+	 	ondragstart
+	 	ondragend
+	 Form events
+	 	onsubmit
+	 	onreset
+	 	onchange
+	 	oninput
+	 	oninvalid
+	 Andmore
+	 	oncopy 
+	 	onpaste
+	 	oncut
+	 	ononline
+	 	onoffline
+	 	onwheel
+
+
+
+
+
+
+ex. simple JS script to add 1 to input
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script lang = "JavaScript">
+        function add1(){
+            console.log("run the add1 function");
+            var inputCtrl = document.getElementById("nbr");
+            var nbr = inputCtrl.value;
+            console.log("nbr is ", nbr);
+           
+            var outputCtrl = document.getElementById("ans");
+            outputCtrl.value = Number(nbr) + 1;
+        }
+    </script>
+
+    <title>JavaScript</title>
+</head>
+<body>
+    <label>Number:</label>
+    <input type = "text" value = "0" id = "nbr">
+    <label>Answer:</label>
+    <input type = "text" name = "ans" id ="ans">
+    <button onclick = "add1();">Add</button>
+</body>
+</html>
+
+
+
+For of 
+
+querySelector()
+ex
+document.querySelector("div.upcoming-events-section div.row:first-child")
+Function can be used instaed of the getElementBy functions because you can specify class tags as well as element tags and child selectors
+
+
+
+JAVASCRIPt uses CamelCase for Everything
+
+var f = function (t){work here}
+this is called an anonymous function
+
+
+
+Bubbling
+	Events will bubble up to alllllllll parents of the event andthis can be stopped by using the event.stopPropagation();
+
+	You will only need to stop the event bubbling if you are using multiple on click events
+
+
+appendChild();
+alement.appendChild('newElement'); 
+element.appendChilde{newElement, Old element);
+	placing something inside the element
+}
+
+JQuery
+
+3rd party library
+written in JS 
+It is a single function "JQuery" and i most often accessed with an alias of "$"
+
+is primarily used to "query" the DON to fin elements and then perform an action against them
+
+includes a libraryy of helper funciton such as "$.ajax()"
+
+$().ready(yourStartupFunction)
+
+$("table")
+
+$("someID")
+
+$(".someclassname")
+$(".sitenaveA")
+
+var t = $("table").css("border,"solid red 2px").filter(".products").css("background","lightgray")
+
+var t would hold the tables that are filtered with the class name products
+
+can add normal js to the jquery
+	$('.gridt1').html(
+	function(index,oldhtml){return oldhtml.replace(/&lt;/g,'<'.replace(/&gt;g/g,'>')
+	)})
+
+
+
+	.each()
+displaying a message for each table
+	$("table").each(funciton(){alert("table has" + this.rows.length+ "rows")})
+
+
+
+Add elements around exsisting context
+	.wrap
+	.unwrap()
+	.wrapAll()
+	.wrapInner()
+add elements inside of existing elements 
+	.append()
+	.appendTo()
+		.html()
+		.prepend()
+		.prependTo()
+		.text()
+add new content ousdie an existing element
+	.after()
+	.before()
+	.insertAfter()
+	.insertBefore
+Remove elements
+	.detach()
+	.empty()
+	.remove()
+	.unwrap()
+CopyElements
+	.clone()
+
+Effects and animation
+	Basic
+		.hide()
+		.shsow()
+		.toggle()
+	Fading
+		.fadeIn()
+		.fadeOut()
+		.fadeTo()
+		.fadeToggle()
+	Sliding
+		.slideUp()
+		.slideDown()
+		.slideToggle()
+
+Misc
+	$.each()
+	$.now()
+	$.parseXML
+	$.trim
+	$.type()
+	$.makeArray()
+	$.map()
+	$.merge()
+	$.isArray()
+	$.inArray()
+
+
+in c:repos/java
+	create a calculator folder/project
+	configure like the example on page 20
+	hardcode typed variables 
+	perform basic math functions  + - / * % 
+
+	Create a factorial loop
+
+
+Typescript
+	tsc -v checks if u have ts installed and version
+	npm install -g typescript // installs TS globally on your machine
+	superset of javascript created by microsoft
+	Provides stronger type checking in development mode for 
+		properties
+		method parameters
+		method return values
+	Is transpiled (compiled) into Js
+	plugin available for many programer editers
+
+	declaring a variable 
+		let a:number=5
+
+	Typescript must be transpiled into Js so that browsers can understand it.
+	transpiling does not syntax check or logically check code
+	It will R-squig some errors
+
+	TS is easily installed by NPM or node package manager
+	NPM is provided with nodejs
+	nmber of supporting npm packages make building applications with ts much more productive
+
+	executing tsc will turn any ts file into a js file
+		tsc hi.ts =>hi.js
+		tsc *.ts =>*.js
+		tsc -w 	//take your git bash session and watc hthat folder and transpile the ts files
+			it takes up the process of the git bash
+		tsconfig.json (in project root)
+			compilerOptions
+				outDir:"js"
+			include:["ts/**.*"]
+Function
+	function Add(p1:number, p2 :number): number {return p1+p2;}
+		:number // after the parameters is the return type of the function
+
+
+
+
+ADDING MODULES TO TS
+	npm i @types/node
+	npm i --save [modulename]
+	
+	add the to Ts file " var variable = require(["modulename"])"
+
+
+
+Node
+	no window there is a global tag instead
+	running on you local machine not on you browser
+	programming with node means creating processes on your machine
+
+	you can execute commands directly on your machine directly from within node
+
+	modules - how you load one file into another
+
+	./   -- looking for a file in the same directory
+		syntax in JS for relative file paths
+
+	npm download and manage packages
+
+	npm install underscore
+
+	npm init // saves the package you installed 
+
+	allows the maintenance of dependancies in node projects
+
+var whatever = require('modulename');
+	this is like a using statement making a call to a library to access its functions
+
+
+
+
+
+
+
+
+Angular
+	JS can be used but typescript is recommended
+	Component based framework
+	components are completely self contained units that should perform a single function and render a portion of the page
+		tree like structure with a single component being the root and all other components based on the root
+	Angular JS works as a single webpage that changes based on the component1! neat
+
+	An angular app is a module which is a collection of other modules componenets pipes services and other angular objects
+
+	{{}} inside is a variable we want to print to the screen-  1 way binding
+
+	Component
+		Component ts file
+		component html file
+		component css file
+		componenct spec file
+
+	components are made of 
+		 imports of other classes
+		 	@component ({...}) decoratoor
+		 		selector
+		 		template or html
+		 		styles or css 
+		 	a class
+		 Each component has a single parent component
+		 child component include slector (psuedo-html-tag) in parent html
+
+
+	uses import (using is c#)
+		import {Component } from '@angular/core';
+		@Component({
+			template: 
+			<button (click)='setname()'> SetTheName</button>
+			<p> The {{name}} worked!</p>
+
+		})
+		export class MenuComponent {
+			name: string ='';
+			setName(): void {
+			this.name = 'This Angular MenuComponent';
+			}
+		}
+
+		@ attribute anotation
